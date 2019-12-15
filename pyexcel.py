@@ -8,6 +8,10 @@ class PyExcel:
         self.__wb = None
         self.__sheet = None
 
+    def __iter__(self):
+        for x in self.__wb.sheetnames:
+            yield x
+
     def IsLoaded(self):
         return self.__wb is not None
 
